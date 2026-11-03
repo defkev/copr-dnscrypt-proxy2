@@ -8,8 +8,8 @@
   %endif
 }
 
-# https://github.com/jedisct1/dnscrypt-proxy
-%global goipath         github.com/jedisct1/dnscrypt-proxy
+# https://github.com/dnscrypt/dnscrypt-proxy
+%global goipath         github.com/dnscrypt/dnscrypt-proxy
 Version:                2.1.20
 %global tag             2.1.20
 
@@ -59,12 +59,13 @@ BuildRequires:  %{?go_compiler:compiler(go-compiler)}%{!?go_compiler:golang}
 %{common_description}
 
 %prep
-curl -O -L https://go.dev/dl/go1.27.3.linux-amd64.tar.gz
-tar -C /usr/local -xzf go1.27.3.linux-amd64.tar.gz
-export PATH=$PATH:/usr/local/go/bin
 %autosetup -p1 -n dnscrypt-proxy-%{version}
 
 %build
+curl -O -L https://go.dev/dl/go1.27.3.linux-amd64.tar.gz
+mkdir -p %{buildroot}%/usr/local
+tar -C %{buildroot}/usr/local -xzf go1.27.3.linux-amd64.tar.gz
+export PATH=$PATH:%{buildroot}/usr/local/go/bin
 export GO111MODULE=on
 export GOFLAGS=-mod=vendor
 ln -s $(pwd) vendor/github.com/jedisct1/dnscrypt-proxy
