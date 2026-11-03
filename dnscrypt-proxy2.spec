@@ -48,12 +48,12 @@ URL:            https://github.com/dnscrypt/dnscrypt-proxy
 Source0:        %{url}/archive/%{version}/dnscrypt-proxy-%{version}.tar.gz
 
 # Largely inspired by Arch packaging
-Patch0:         dnscrypt-proxy-2.1.1-custom_config.patch
+#Patch0:         dnscrypt-proxy-2.1.1-custom_config.patch
 
 # e.g. el6 has ppc64 arch without gcc-go, so EA tag is required
 ExclusiveArch:  %{?go_arches:%{go_arches}}%{!?go_arches:%{ix86} x86_64 aarch64 %{arm}}
 # If go_compiler is not set to 1, there is no virtual provide. Use golang instead.
-BuildRequires:  %{?go_compiler:compiler(go-compiler)}%{!?go_compiler:golang}
+#BuildRequires:  %{?go_compiler:compiler(go-compiler)}%{!?go_compiler:golang}
 
 %description
 %{common_description}
