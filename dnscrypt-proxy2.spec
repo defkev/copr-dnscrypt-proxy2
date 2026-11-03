@@ -63,7 +63,7 @@ ExclusiveArch:  %{?go_arches:%{go_arches}}%{!?go_arches:%{ix86} x86_64 aarch64 %
 
 %build
 curl -O -L https://go.dev/dl/go1.27.3.linux-amd64.tar.gz
-mkdir -p %{buildroot}%/usr/local
+mkdir -p %{buildroot}/usr/local
 tar -C %{buildroot}/usr/local -xzf go1.27.3.linux-amd64.tar.gz
 export PATH=$PATH:%{buildroot}/usr/local/go/bin
 export GO111MODULE=on
