@@ -67,7 +67,7 @@ mkdir -p %{buildroot}/usr/local
 tar -C %{buildroot}/usr/local -xzf go1.27.3.linux-amd64.tar.gz
 export PATH=$PATH:%{buildroot}/usr/local/go/bin
 export GO111MODULE=on
-export GOFLAGS=-mod=vendor
+export GOFLAGS="-trimpath -mod=vendor"
 ln -s $(pwd) vendor/github.com/jedisct1/dnscrypt-proxy
 %gobuild -o _bin/dnscrypt-proxy %{goipath}/dnscrypt-proxy
 
