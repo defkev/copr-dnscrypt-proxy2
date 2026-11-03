@@ -44,7 +44,7 @@ Release:        1%{?dist}
 Summary:        Flexible DNS proxy, with support for encrypted DNS protocols
 
 License:        ISC
-URL:            https://github.com/jedisct1/dnscrypt-proxy
+URL:            https://github.com/dnscrypt/dnscrypt-proxy
 Source0:        %{url}/archive/%{version}/dnscrypt-proxy-%{version}.tar.gz
 
 # Largely inspired by Arch packaging
