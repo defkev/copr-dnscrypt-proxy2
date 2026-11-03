@@ -114,7 +114,7 @@ fi
 %ghost %{_sysconfdir}/systemd/system/dnscrypt-proxy.service
 
 %changelog
-* The Nov 03 2026 defkev <defkev@gmail.com> - 2.1.20-1
+* Tue Nov 03 2026 defkev <defkev@gmail.com> - 2.1.20-1
 - Update to 2.1.1
 
 * Sat Oct 23 2021 Robert-André Mauchin <zebob.m@gmail.com> - 2.1.1-1
